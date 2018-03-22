@@ -1,4 +1,5 @@
 <div>
+	Hello, 
 <h1>
 {$message}
 </h1>

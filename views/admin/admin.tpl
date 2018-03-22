@@ -15,8 +15,7 @@
 <span>all is error</span>
 {/if}
 </div>
-<br>
-<br>
+
 <form method="post">
 	Title Module :
 	<input type="text" name="titlemodule">

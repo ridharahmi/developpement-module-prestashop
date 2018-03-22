@@ -53,7 +53,7 @@ class MyModule extends Module
 
 
   public function getContent(){
-    if(Tools::getValue('titlemodule')){
+    if((Tools::getValue('titlemodule') && (Tools::getValue('titlemodule')){
       $msg = Tools::getValue('titlemodule');
       $status =  false;
       
@@ -74,8 +74,9 @@ class MyModule extends Module
 
   public function hookDisplayHome(){
 
+    $message = ConfigurationCore::get('message_champ');
     $this->context->smarty->assign(array(
-      'message'     => 'this is message test' , 
+      'message'     => $message, 
       'description' => 'this is description test',
       'url'         => 'www.unicom.tn'
 
