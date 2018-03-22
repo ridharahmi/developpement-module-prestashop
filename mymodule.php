@@ -53,11 +53,15 @@ class MyModule extends Module
 
 
   public function getContent(){
-    if(Tools::getValue("titlemodule")){
-      $msg = Tools::getValue("titlemodule");
+    if(Tools::getValue('titlemodule')){
+      $msg = Tools::getValue('titlemodule');
       $this->context->smarty->assign(array(
        'submit_form' => true
       ));
+     if(ConfigurationCore::updateValue('message_champ', $msg))
+      {
+
+      }
     }
     return $this->display(__FILE__, 'views/admin/admin.tpl');
   }
