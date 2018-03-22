@@ -1,4 +1,4 @@
-<div>
+<div style="text-align: center;">
 	Hello, 
 <h1>
 {$message}

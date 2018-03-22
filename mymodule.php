@@ -53,12 +53,13 @@ class MyModule extends Module
 
 
   public function getContent(){
-    if((Tools::getValue('titlemodule') && (Tools::getValue('titlemodule')){
-      $msg = Tools::getValue('titlemodule');
+    if(Tools::getValue('titlemodule') && Tools::getValue('bodymodule')){
+      $msg  = Tools::getValue('titlemodule');
+      $body = Tools::getValue('bodymodule');
       $status =  false;
       
 
-     if(ConfigurationCore::updateValue('message_champ', $msg))
+     if(ConfigurationCore::updateValue('title_champ', $msg) && ConfigurationCore::updateValue('description_champ', $body))
       {
         $status = true;
         $this->context->smarty->assign(array(
@@ -74,10 +75,11 @@ class MyModule extends Module
 
   public function hookDisplayHome(){
 
-    $message = ConfigurationCore::get('message_champ');
+    $message = ConfigurationCore::get('title_champ');
+    $description = ConfigurationCore::get('description_champ');
     $this->context->smarty->assign(array(
       'message'     => $message, 
-      'description' => 'this is description test',
+      'description' => $description,
       'url'         => 'www.unicom.tn'
 
     ));
