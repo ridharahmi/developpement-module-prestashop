@@ -55,11 +55,16 @@ class MyModule extends Module
   public function getContent(){
     if(Tools::getValue('titlemodule')){
       $msg = Tools::getValue('titlemodule');
-      $this->context->smarty->assign(array(
-       'submit_form' => true
-      ));
+      $status =  false;
+      
+
      if(ConfigurationCore::updateValue('message_champ', $msg))
       {
+        $status = true;
+        $this->context->smarty->assign(array(
+           'submit_form' => true,
+           'status'      => $status
+         ));
 
       }
     }

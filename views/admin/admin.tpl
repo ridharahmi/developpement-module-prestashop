@@ -8,7 +8,15 @@
  	Where Request is Error !
  </p>
 {/if}
-
+<div align="right">
+{if $status && $status == 'true' }
+<span>all is succes</span>
+{else}
+<span>all is error</span>
+{/if}
+</div>
+<br>
+<br>
 <form method="post">
 	Title Module :
 	<input type="text" name="titlemodule">
